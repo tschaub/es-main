@@ -1,0 +1,37 @@
+{
+  "name": "es-main",
+  "version": "1.0.0",
+  "description": "Test if an ES module is run directly (require.main replacement)",
+  "main": "src/main.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tschaub/es-main.git"
+  },
+  "files": [
+    "main.js"
+  ],
+  "scripts": {
+    "pretest": "eslint .",
+    "test:with-extension": "node --no-warnings test.js",
+    "test:without-extension": "node --no-warnings test",
+    "test:without-node": "./test.js",
+    "test": "npm-run-all test:*"
+  },
+  "keywords": [
+    "require.main",
+    "process.mainModule",
+    "modules"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-tschaub": "^13.1.0",
+    "npm-run-all": "^4.1.5"
+  },
+  "eslintConfig": {
+    "extends": "tschaub",
+    "parser": "babel-eslint"
+  }
+}
