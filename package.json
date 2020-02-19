@@ -2,7 +2,7 @@
   "name": "es-main",
   "version": "1.0.0",
   "description": "Test if an ES module is run directly (require.main replacement)",
-  "main": "src/main.js",
+  "main": "main.js",
   "type": "module",
   "repository": {
     "type": "git",
