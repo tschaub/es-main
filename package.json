@@ -1,6 +1,6 @@
 {
   "name": "es-main",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Test if an ES module is run directly (require.main replacement)",
   "main": "main.js",
   "type": "module",
