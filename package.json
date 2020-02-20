@@ -13,10 +13,10 @@
   ],
   "scripts": {
     "pretest": "eslint .",
-    "test:with-extension": "node --no-warnings test.js",
-    "test:without-extension": "node --no-warnings test",
-    "test:without-node": "NODE_NO_WARNINGS=1 ./test.js",
-    "test": "npm-run-all test:*"
+    "test:with-extension": "node test.js",
+    "test:without-extension": "node test",
+    "test:without-node": "./test.js",
+    "test": "NODE_NO_WARNINGS=1 npm-run-all test:*"
   },
   "keywords": [
     "require.main",
