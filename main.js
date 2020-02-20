@@ -13,6 +13,12 @@ export function stripExt(name) {
 
 export default function(meta) {
   const modulePath = fileURLToPath(meta.url);
+
   const scriptPath = process.argv[1];
-  return stripExt(modulePath) === stripExt(scriptPath);
+  const extension = path.extname(scriptPath);
+  if (extension) {
+    return modulePath === scriptPath;
+  }
+
+  return stripExt(modulePath) === scriptPath;
 }
