@@ -22,4 +22,4 @@ if (require.main === module) {
 }
 ```
 
-With ES modules in Node.js, `require.main` is not available.  Other alternatives like `process.mainModule` and `module.parent` are also not defined for ES modules.  In the future, there may be an alternative way to do this check (e.g. `import.meta.main` or a special `main` export).  Until then, this package provides a workaround.
+With ES modules in Node.js, `require.main` is [not available](https://nodejs.org/dist/latest-v14.x/docs/api/esm.html#esm_no_require_exports_module_exports_filename_dirname).  Other alternatives like `process.mainModule` and `module.parent` are also not defined for ES modules.  In the future, there may be [an alternative way](https://github.com/nodejs/modules/issues/274) to do this check (e.g. `import.meta.main` or a special `main` export).  Until then, this package provides a workaround.
