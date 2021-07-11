@@ -3,13 +3,15 @@
   "version": "1.0.2",
   "description": "Test if an ES module is run directly (require.main replacement)",
   "main": "main.js",
+  "types": "main.d.ts",
   "type": "module",
   "repository": {
     "type": "git",
     "url": "git://github.com/tschaub/es-main.git"
   },
   "files": [
-    "main.js"
+    "main.js",
+    "main.d.ts"
   ],
   "scripts": {
     "pretest": "eslint .",
