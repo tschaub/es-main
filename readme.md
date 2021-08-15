@@ -12,6 +12,23 @@ if (esMain(import.meta)) {
 }
 ```
 
+When you use bundler such as rollup or esbuild, to bundle library code for browser, you may want to completely tree-shake away command line only code.
+
+```js
+// library code
+
+/* @__PURE__ */(async () => {
+    if ((await import('es-main')).default(import.meta)) {
+        // command line only code
+    }
+})();
+```
+
+Bundler output
+```js
+// library code
+```
+
 ## why?
 
 It can be useful to have a module that is both imported from other modules and run directly.  With CommonJS, it is possible to have a top-level condition that checks if a script run directly like this:
