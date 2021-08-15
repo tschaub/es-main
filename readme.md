@@ -12,8 +12,7 @@ if (esMain(import.meta)) {
 }
 ```
 
-When you use bundler such as rollup or esbuild, to bundle library code for browser, you may want to completely tree-shake away command line only code.
-
+If an esm library available for browser, also provide cli, you may want to completely tree-shake away command line only code.
 ```js
 // library code
 
@@ -24,7 +23,7 @@ When you use bundler such as rollup or esbuild, to bundle library code for brows
 })();
 ```
 
-Bundler output
+Output from bundler such as rollup.
 ```js
 // library code
 ```
