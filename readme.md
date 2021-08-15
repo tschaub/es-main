@@ -12,13 +12,19 @@ if (esMain(import.meta)) {
 }
 ```
 
-If an esm library available for browser, also provide cli, you may want to completely tree-shake away command line only code.
+## Tree Shake
+
+For an esm library available for browser, also provide cli.
+
+You may want to completely tree-shake away command line only code.
 ```js
 // library code
 
-/* @__PURE__ */(async () => {
-    if ((await import('es-main')).default(import.meta)) {
-        // command line only code
+/* @__PURE__ */ (async () => {
+    // command line only code
+    const esMain = (await import('es-main')).default;
+    if (esMain(import.meta)) {
+        // command line only main code
     }
 })();
 ```
@@ -27,6 +33,28 @@ Output from bundler such as rollup.
 ```js
 // library code
 ```
+
+<details>
+  <summary>Vscode snippet</summary>
+  <p>
+ 
+```json
+    "esMain": {
+        "scope": "typescript,javascript",
+        "description": "esMain",
+        "prefix": "esMain",
+        "body": [
+            "/* @__PURE__ */ (async () => {",
+            "    const esMain = (await import('es-main')).default;",
+            "    if (esMain(import.meta)) {",
+            "        ${0}",
+            "    }",
+            "})();",
+        ]
+    },
+```
+  </p>
+</details>
 
 ## why?
 
