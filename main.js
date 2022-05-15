@@ -15,6 +15,11 @@ export default function(meta) {
   const modulePath = fileURLToPath(meta.url);
 
   const scriptPath = process.argv[1];
+  
+  if (!scriptPath) {
+    return false;
+  }
+  
   const extension = path.extname(scriptPath);
   if (extension) {
     return modulePath === scriptPath;
