@@ -31,7 +31,8 @@
   "keywords": [
     "require.main",
     "process.mainModule",
-    "modules"
+    "modules",
+    "import.meta.main"
   ],
   "license": "MIT",
   "devDependencies": {
