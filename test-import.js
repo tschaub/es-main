@@ -1,5 +1,5 @@
-import {strictEqual} from 'assert';
 import esMain from './main.js';
+import {strictEqual} from 'assert';
 
 strictEqual(esMain(import.meta), false, 'not run as main');
 
