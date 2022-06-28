@@ -1,7 +1,12 @@
-import {fileURLToPath} from 'url';
-import process from 'process';
 import path from 'path';
+import process from 'process';
+import {fileURLToPath} from 'url';
 
+/**
+ * Strip the extension from a filename if it has one.
+ * @param {string} name A filename.
+ * @return {string} The filename without a path.
+ */
 export function stripExt(name) {
   const extension = path.extname(name);
   if (!extension) {
@@ -11,7 +16,11 @@ export function stripExt(name) {
   return name.slice(0, -extension.length);
 }
 
-export default function(meta) {
+/**
+ * @param {ImportMeta} meta The import meta object.
+ * @return {boolean} The module is the main module.
+ */
+export default function (meta) {
   const modulePath = fileURLToPath(meta.url);
 
   const scriptPath = process.argv[1];
