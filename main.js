@@ -18,11 +18,6 @@ export function stripExt(name) {
 }
 
 /**
- * @type {NodeRequire}
- */
-let require;
-
-/**
  * Check if a module was run directly with node as opposed to being
  * imported from another module.
  * @param {ImportMeta} meta The `import.meta` object.
@@ -33,9 +28,7 @@ export default function esMain(meta) {
     return false;
   }
 
-  if (!require) {
-    require = createRequire(meta.url);
-  }
+  const require = createRequire(meta.url);
   const scriptPath = require.resolve(process.argv[1]);
 
   const modulePath = fileURLToPath(meta.url);
