@@ -23,9 +23,13 @@ export function stripExt(name) {
  * @return {boolean} The module was run directly with node.
  */
 export default function esMain(meta) {
+  const scriptPath = process.argv[1];
+  if (!meta || !scriptPath) {
+    return false;
+  }
+
   const modulePath = fileURLToPath(meta.url);
 
-  const scriptPath = process.argv[1];
   const extension = path.extname(scriptPath);
   if (extension) {
     return modulePath === scriptPath;
