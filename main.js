@@ -17,10 +17,12 @@ export function stripExt(name) {
 }
 
 /**
- * @param {ImportMeta} meta The import meta object.
- * @return {boolean} The module is the main module.
+ * Check if a module was run directly with node as opposed to being
+ * imported from another module.
+ * @param {ImportMeta} meta The `import.meta` object.
+ * @return {boolean} The module was run directly with node.
  */
-export default function (meta) {
+export default function esMain(meta) {
   const modulePath = fileURLToPath(meta.url);
 
   const scriptPath = process.argv[1];
