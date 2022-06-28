@@ -22,6 +22,8 @@
     "test:with-extension": "node test.js",
     "test:without-extension": "node test",
     "test:without-node": "./test.js",
+    "test:resolve-index": "node test-resolve-index",
+    "test:resolve-main": "node test-resolve-main",
     "test:repl": "node --eval \"import('./main.js').then(mod => {if (mod.default({})) throw new Error('expected false')})\"",
     "test:types": "npx tsc --noEmit",
     "test": "npm-run-all test:*"

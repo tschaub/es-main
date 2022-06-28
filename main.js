@@ -1,5 +1,6 @@
 import path from 'path';
 import process from 'process';
+import {createRequire} from 'module';
 import {fileURLToPath} from 'url';
 
 /**
@@ -17,16 +18,25 @@ export function stripExt(name) {
 }
 
 /**
+ * @type {NodeRequire}
+ */
+let require;
+
+/**
  * Check if a module was run directly with node as opposed to being
  * imported from another module.
  * @param {ImportMeta} meta The `import.meta` object.
  * @return {boolean} The module was run directly with node.
  */
 export default function esMain(meta) {
-  const scriptPath = process.argv[1];
-  if (!meta || !scriptPath) {
+  if (!meta || !process.argv[1]) {
     return false;
   }
+
+  if (!require) {
+    require = createRequire(meta.url);
+  }
+  const scriptPath = require.resolve(process.argv[1]);
 
   const modulePath = fileURLToPath(meta.url);
 
