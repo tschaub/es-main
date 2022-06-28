@@ -4,6 +4,7 @@
   "description": "Test if an ES module is run directly (require.main replacement)",
   "main": "main.js",
   "type": "module",
+  "types": "main.d.ts",
   "repository": {
     "type": "git",
     "url": "git://github.com/tschaub/es-main.git"
