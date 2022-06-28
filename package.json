@@ -22,6 +22,7 @@
     "test:with-extension": "node test.js",
     "test:without-extension": "node test",
     "test:without-node": "./test.js",
+    "test:repl": "node --eval \"import('./main.js').then(mod => {if (mod.default({})) throw new Error('expected false')})\"",
     "test:types": "npx tsc --noEmit",
     "test": "npm-run-all test:*"
   },
