@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-import esMain, {stripExt} from './main.js';
-import testImport from './test-import.js';
+import esMain, {stripExt} from '../main.js';
 import {strictEqual} from 'assert';
+import {testImport} from './import.js';
 
-strictEqual(testImport, true, 'import other module');
+strictEqual(testImport, false, 'imported modules are not main');
 strictEqual(esMain(import.meta), true, 'run as main');
 
 strictEqual(stripExt('/path/to/file.js'), '/path/to/file');
