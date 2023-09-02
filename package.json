@@ -19,11 +19,11 @@
     "pretest": "npm run lint",
     "generate-types": "npx tsc -declaration --declarationMap --emitDeclarationOnly --noEmit false",
     "preversion": "npm run generate-types",
-    "test:with-extension": "node test.js",
-    "test:without-extension": "node test",
-    "test:without-node": "./test.js",
-    "test:resolve-index": "node test-resolve-index",
-    "test:resolve-main": "node test-resolve-main",
+    "test:with-extension": "node test/test.js",
+    "test:without-extension": "node test/test",
+    "test:without-node": "./test/test.js",
+    "test:resolve-index": "node test/resolve-index",
+    "test:resolve-main": "node test/resolve-main",
     "test:repl": "node --eval \"import('./main.js').then(mod => {if (mod.default({})) throw new Error('expected false')})\"",
     "test:types": "npx tsc --noEmit",
     "test": "npm-run-all test:*"
@@ -38,7 +38,7 @@
   "devDependencies": {
     "@types/node": "^18.0.0",
     "eslint": "^8.18.0",
-    "eslint-config-tschaub": "^14.0.0",
+    "eslint-config-tschaub": "^14.1.2",
     "npm-run-all": "^4.1.5",
     "typescript": "^4.7.4"
   },
