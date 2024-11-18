@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import esMain, {stripExt} from '../main.js';
 import {strictEqual} from 'assert';
+import esMain, {stripExt} from '../main.js';
 import {testImport} from './import.js';
 
 strictEqual(testImport, false, 'imported modules are not main');
