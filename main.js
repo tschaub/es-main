@@ -24,7 +24,13 @@ export function stripExt(name) {
  * @return {boolean} The module was run directly with node.
  */
 export default function esMain(meta) {
-  if (!meta || !process.argv[1]) {
+  if (!meta) {
+    return false;
+  }
+  if ('main' in meta) {
+    return !!meta.main;
+  }
+  if (!process.argv[1]) {
     return false;
   }
 
