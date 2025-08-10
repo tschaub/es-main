@@ -3,7 +3,7 @@
 Test if an [ES module](https://nodejs.org/api/esm.html) is run directly with Node.js.  Acts as a replacement for `require.main`.
 
 > [!NOTE]
-> If you are using Node.js versions never than `22.18.0` or `24.2.0`, you might want to use the built-in [`import.meta.main`](https://nodejs.org/docs/latest/api/esm.html#importmetamain) instead of this module.
+> If you are using Node.js versions newer than `22.18.0` or `24.2.0`, you should use the built-in [`import.meta.main`](https://nodejs.org/docs/latest/api/esm.html#importmetamain) instead of this module.
 
 ## use
 
